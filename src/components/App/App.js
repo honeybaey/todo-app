@@ -10,6 +10,16 @@ export default class App extends Component {
   constructor() {
     super();
 
+    this.maxId = 100;
+
+    this.createItem = (label) => {
+      return {
+        label,
+        done: false,
+        important: false,
+        id: this.maxId++,
+      };
+    };
     this.state = {
       todoData: [
         { label: "Tesla", important: false, id: 1 },
