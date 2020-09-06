@@ -42,6 +42,17 @@ export default class App extends Component {
         };
       });
     };
+    this.addItem = (text) => {
+      const newItem = this.createItem(text);
+
+      this.setState(({ todoData }) => {
+        const newArray = [...todoData, newItem];
+
+        return {
+          todoData: newArray,
+        };
+      });
+    };
   }
 
   render() {
