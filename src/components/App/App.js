@@ -61,6 +61,13 @@ export default class App extends Component {
 
       return [...arr.slice(0, idx), newItem, ...arr.slice(idx + 1)];
     };
+    this.onToggleDone = (id) => {
+      this.setState(({ todoData }) => {
+        return {
+          todoData: this.toggleProperty(todoData, id, "done"),
+        };
+      });
+    };
   }
 
   render() {
