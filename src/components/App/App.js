@@ -68,6 +68,13 @@ export default class App extends Component {
         };
       });
     };
+    this.onToggleImportant = (id) => {
+      this.setState(({ todoData }) => {
+        return {
+          todoData: this.toggleProperty(todoData, id, "important"),
+        };
+      });
+    };
   }
 
   render() {
