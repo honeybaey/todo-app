@@ -91,7 +91,14 @@ export default class App extends Component {
           <ItemStatusFilter />
         </div>
 
-        <TodoList todos={this.state.todoData} onDeleted={this.deleteItem} />
+        <TodoList
+          todos={todoData}
+          onDeleted={this.deleteItem}
+          onToggleImportant={this.onToggleImportant}
+          onToggleDone={this.onToggleDone}
+        />
+
+        <ItemAddForm onAddItem={this.addItem} />
       </div>
     );
   }
