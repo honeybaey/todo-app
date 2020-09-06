@@ -2,15 +2,18 @@ import React from "react";
 import TodoListItem from "../TodoListItem/TodoListItem";
 import "./TodoList.css";
 
-const TodoList = ({ todos, onDeleted }) => {
+const TodoList = ({ todos, onDeleted, onToggleDone, onToggleImportant }) => {
   const elements = todos.map((item) => {
     const { id, ...itemProps } = item;
 
     return (
       <li key={id} className="list-group-item">
-        <TodoListItem {...itemProps} onDeleted={() => onDeleted(id)} />{" "}
-        {/* this is spread operator */}
-        {/* <TodoListItem label={item.label} important={item.important} /> */}
+        <TodoListItem 
+          {...itemProps} 
+          onDeleted={() => onDeleted(id)}
+          onToggleImportant={() => onToggleImportant(id)}
+          onToggleDone={() => onToggleDone(id)}
+        />
       </li>
     );
   });
