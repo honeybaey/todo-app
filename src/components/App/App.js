@@ -5,6 +5,7 @@ import SearchPanel from "../SearchPanel/SearchPanel";
 import TodoList from "../TodoList/TodoList";
 import "./App.css";
 import ItemStatusFilter from "../ItemStatusFilter/ItemStatusFilter";
+import ItemAddForm from "../ItemAddForm/ItemAddForm";
 
 export default class App extends Component {
   constructor() {
@@ -20,11 +21,12 @@ export default class App extends Component {
         id: this.maxId++,
       };
     };
+
     this.state = {
       todoData: [
-        { label: "Tesla", important: false, id: 1 },
-        { label: "Mercedes-Benz", important: true, id: 2 },
-        { label: "BMW", important: false, id: 3 },
+        this.createItem("Tesla"),
+        this.createItem("Mercedes-Benz"),
+        this.createItem("BMW"),
       ],
     };
 
@@ -42,6 +44,7 @@ export default class App extends Component {
         };
       });
     };
+
     this.addItem = (text) => {
       const newItem = this.createItem(text);
 
@@ -53,6 +56,7 @@ export default class App extends Component {
         };
       });
     };
+
     this.toggleProperty = (arr, id, propName) => {
       const idx = arr.findIndex((el) => el.id === id);
 
@@ -61,6 +65,7 @@ export default class App extends Component {
 
       return [...arr.slice(0, idx), newItem, ...arr.slice(idx + 1)];
     };
+
     this.onToggleDone = (id) => {
       this.setState(({ todoData }) => {
         return {
@@ -68,6 +73,7 @@ export default class App extends Component {
         };
       });
     };
+
     this.onToggleImportant = (id) => {
       this.setState(({ todoData }) => {
         return {
