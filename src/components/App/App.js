@@ -24,9 +24,9 @@ export default class App extends Component {
 
     this.state = {
       todoData: [
-        this.createItem("Tesla"),
-        this.createItem("Mercedes-Benz"),
-        this.createItem("BMW"),
+        this.createItem("Список задач"),
+        this.createItem("на"),
+        this.createItem("React.js"),
       ],
       term: "",
       filter: "all",
