@@ -35,7 +35,7 @@ export default class ItemAddForm extends Component {
           placeholder="Введите название задачи"
           value={this.state.label}
         />
-        <button className="btn btn-outline-secondary">Добавить</button>
+        <button className="btn btn-primary">Добавить</button>
       </form>
     );
   }
